@@ -4,38 +4,9 @@ This is a simple Spring Boot application that demonstrates the integration of **
 
 ## Entities
 
-### Account
-
-The `Account` entity represents a user account in the system. It includes the following fields:
-
-* `id`: Unique identifier of the account.
-* `firstName`: First name of the account holder.
-* `lastName`: Last name of the account holder.
-* `email`: Email address associated with the account.
-* `password`: Password for the account.
-* `createdAt`: Timestamp indicating the creation date of the account.
-* `updatedAt`: Timestamp indicating the last update date of the account.
-* `posts`: List of posts associated with the account.
-* `authorities`: Set of authorities assigned to the account.
-
-### Authority
-
-The `Authority` entity represents a role or permission in the system. It includes the following fields:
-
-* `id`: Unique identifier of the authority.
-* `name`: Name of the authority.
-* `accounts`: List of accounts assigned with the authority.
-
-### Post
-
-The Post entity represents a post made by an account. It includes the following fields:
-
-`id`: Unique identifier of the post.
-`title`: Title of the post.
-`content`: Content of the post.
-`createdAt`: Timestamp indicating the creation date of the post.
-`updatedAt`: Timestamp indicating the last update date of the post.
-`account`: Account associated with the post.
+* The `Account` entity represents a user account in the system. It includes the following fields:
+* The `Authority` entity represents a role or permission in the system. It includes the following fields:
+* The `Post` entity represents a post made by an account. It includes the following fields:
 
 ## Database Migrations
 
@@ -65,6 +36,13 @@ The application will start, and the database migrations will be automatically ex
 * The application uses a PostgreSQL database for data storage. You can set up the required services using Docker Compose.
 * The PostgreSQL service will be accessible on localhost:5432, and PgAdmin4 will be accessible on localhost:5050
 
+## Testing our repositories using Testcontainers
+
+The project includes unit tests and integration tests using `Testcontainers`. Testcontainers allows running tests with a real PostgreSQL container, providing a reliable and consistent testing environment. The tests can be found in the `src/test `directory.
+
+To run the tests, execute the following command: `./gradlew test`
+
+### Screenshots:
 
 ![img.png](src%2Fmain%2Fresources%2Fscreenshots%2Fimg.png)
 
